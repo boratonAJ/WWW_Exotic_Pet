@@ -109,7 +109,12 @@ python scripts/data_processing.py
 See [requirements.txt](requirements.txt) for Python dependencies.
 
 ## Authors
-- Your Name
+- Ola.ajayi@gwmail.gwu.edu
+- vaishnavi.pachva@gwmail.gwu.edu
+- Henry.lin@gwmail.gwu.edu
+- c.buss@gwmail.gwu.edu
+- kittyyangjunbi@gwmail.gwu.edu
+- david.king@gwmail.gwu.edu
 
 ## License
 See LICENSE file for details.

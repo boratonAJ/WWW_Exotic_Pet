@@ -1,0 +1,26 @@
+# Default configuration file
+# Use this to manage project parameters
+
+# Data paths
+data:
+  raw_path: "data/raw"
+  processed_path: "data/processed"
+  external_path: "data/external"
+
+# Model parameters
+model:
+  random_state: 42
+  test_size: 0.2
+  cv_folds: 5
+
+# Processing
+processing:
+  train_test_split: true
+  normalize: true
+  scaling_method: "standard"  # standard or minmax
+
+# Output
+output:
+  figures_path: "results/figures"
+  reports_path: "results/reports"
+  models_path: "models"

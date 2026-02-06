@@ -109,7 +109,7 @@ python scripts/data_processing.py
 See [requirements.txt](requirements.txt) for Python dependencies.
 
 ## Authors
-- Olabode Ajayi
+- Olabode Ajayi : Email.........
 - vaishnavi.pachva@gwmail.gwu.edu
 - Henry.lin@gwmail.gwu.edu
 - c.buss@gwmail.gwu.edu

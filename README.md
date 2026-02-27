@@ -105,6 +105,16 @@ jupyter notebook notebooks/
 python scripts/data_processing.py
 ```
 
+### Environment variables
+
+- `SERPAPI_KEY` — Set this environment variable to your SerpApi API key before running crawlers or the notebook. Example:
+
+```bash
+export SERPAPI_KEY=your_real_key_here
+```
+
+Do not commit API keys to source control; the notebook and scripts read the key from `SERPAPI_KEY`.
+
 ## Dependencies
 See [requirements.txt](requirements.txt) for Python dependencies.
 

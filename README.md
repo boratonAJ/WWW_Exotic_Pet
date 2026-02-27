@@ -115,6 +115,37 @@ export SERPAPI_KEY=your_real_key_here
 
 Do not commit API keys to source control; the notebook and scripts read the key from `SERPAPI_KEY`.
 
+### Commands to run locally
+
+1. Copy the example env file and set your SerpApi key:
+
+```bash
+cp .env.example .env
+# then edit .env and set SERPAPI_KEY
+```
+
+2. Verify the key loads (uses `python-dotenv`):
+
+```bash
+python scripts/load_env.py
+```
+
+3. Run the SerpApi crawl (will use `SERPAPI_KEY` and consume credits):
+
+```bash
+python scripts/run_serpapi_crawl.py
+```
+
+4. Open notebooks for exploration:
+
+```bash
+jupyter notebook notebooks/
+```
+
+Notes:
+- Keep your `.env` private — it's already listed in `.gitignore`.
+- If you prefer not to use `.env`, export `SERPAPI_KEY` directly in your shell.
+
 ## Dependencies
 See [requirements.txt](requirements.txt) for Python dependencies.
 

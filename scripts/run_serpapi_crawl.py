@@ -5,9 +5,12 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from datetime import datetime
 
 import os
+import runpy
+# Load .env helper to populate environment variables (if .env exists)
+runpy.run_path(os.path.join(os.path.dirname(__file__), '..', 'scripts', 'load_env.py'))
 API_KEY = os.environ.get('SERPAPI_KEY')
 if not API_KEY:
-    raise RuntimeError('SERPAPI_KEY environment variable not set')
+    raise RuntimeError('SERPAPI_KEY environment variable not set; copy .env.example to .env')
 client = Client(api_key=API_KEY)
 analyzer = SentimentIntensityAnalyzer()
 

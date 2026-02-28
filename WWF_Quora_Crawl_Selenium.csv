@@ -1,0 +1,3 @@
+platform,text_content,date,keyword_used,category,source_url,country_context,location_geographic,sentiment_score,top_20_mapping
+Quora,Just a moment...,2026-02-27,,,https://www.quora.com/Can-you-keep-a-monkey-as-a-pet,Unknown,Unknown,0.0,
+Quora,This website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot.,2026-02-27,,,https://www.quora.com/Can-you-keep-a-monkey-as-a-pet,Unknown,Unknown,0.6124,

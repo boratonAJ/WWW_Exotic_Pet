@@ -142,6 +142,65 @@ python scripts/run_serpapi_crawl.py
 jupyter notebook notebooks/
 ```
 
+### Selenium fallback (optional)
+
+If the requests-based Quora scraper misses content (Quora is JS-heavy), use the Selenium fallback script which runs a headless Chrome browser to render pages before scraping.
+
+1. Ensure Chrome/Chromium is installed for your platform (macOS example):
+
+```bash
+# Install Chrome on macOS (Intel or Apple Silicon) via Homebrew
+brew install --cask google-chrome
+```
+
+2. Install Python dependencies (includes `selenium` and `webdriver-manager`):
+
+```bash
+python3 -m pip install -r requirements.txt
+```
+
+3. If you previously ran the Selenium script and hit a chromedriver/architecture mismatch (Exec format errors), remove webdriver-manager's cached drivers so it will redownload the correct binary:
+
+```bash
+rm -rf ~/.wdm/drivers/chromedriver
+```
+
+4. Run the Selenium fallback (non-headless mode is useful for debugging — edit `scripts/scrape_quora_selenium.py` and set `headless=False` in `get_driver()`):
+
+```bash
+python3 scripts/scrape_quora_selenium.py
+```
+
+Troubleshooting:
+- If you see `Exec format error`, it usually means the downloaded chromedriver binary doesn't match your CPU architecture (Intel vs Apple Silicon). Deleting `~/.wdm/drivers/chromedriver` and reinstalling Chrome then re-running will usually fix it.
+- For debugging, run with `headless=False` and watch the browser to confirm pages load.
+- If Chrome is not installed or not on PATH, `webdriver-manager` may download drivers that won't run — ensure a matching Chrome browser is installed.
+
+### CLI wrapper for Quora scraper
+
+A simple CLI wrapper is provided to run the combined Quora scraper with custom keywords or a file of keywords. The wrapper calls `scripts/scrape_quora_combined.py` and writes `WWF_Quora_Crawl_Combined.csv` by default.
+
+Usage examples:
+
+```bash
+# Run built-in small keyword set
+python3 scripts/run_quora_scraper.py
+
+# Pass comma-separated keywords
+python3 scripts/run_quora_scraper.py --keywords "pet monkey,pet tiger"
+
+# Read keywords from a file (one per line)
+python3 scripts/run_quora_scraper.py --file keywords.txt
+
+# Specify custom output file
+python3 scripts/run_quora_scraper.py --keywords "pet monkey" --output my_results.csv
+```
+
+Notes:
+- The scraper first tries a lightweight `requests` parse and falls back to Selenium if pages require rendering.
+- Ensure dependencies are installed (`pip install -r requirements.txt`) and Chrome is available for Selenium fallback.
+
+
 Notes:
 - Keep your `.env` private — it's already listed in `.gitignore`.
 - If you prefer not to use `.env`, export `SERPAPI_KEY` directly in your shell.

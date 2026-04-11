@@ -1,88 +1,79 @@
-# Project Name
+# WWW Exotic Pet
 
 ## Overview
-Brief description of the project and its objectives.
+This project analyzes online discussion about exotic pets, combining data collection, text processing, sentiment and risk analysis, and an interactive Streamlit dashboard for exploration.
 
 ## Project Structure
 
-```
-.
-├── data/
-│   ├── raw/              # Original, immutable data
-│   ├── processed/        # Transformed data ready for analysis
-│   └── external/         # Data from external sources
-├── notebooks/            # Jupyter notebooks for exploration and reporting
-├── src/                  # Reusable Python modules
-├── models/               # Trained model artifacts
-├── results/
-│   ├── figures/          # Generated plots and visualizations
-│   └── reports/          # Reports, analysis documents
-├── tests/                # Unit tests
-├── docs/                 # Project documentation
-├── configs/              # Configuration files
-├── scripts/              # Standalone scripts
-├── .gitignore
-├── requirements.txt
-├── setup.py
-└── README.md
-```
-
 ### Directory Overview
 
-#### `/data`
-Store all project datasets with clear separation:
+### `/data`
+**Purpose**: Store all project data
+
 - **`raw/`**: Original, immutable source data. Never modify files here.
-- **`processed/`**: Cleaned and transformed data ready for modeling.
+- **`processed/`**: Cleaned and transformed data ready for analysis.
 - **`external/`**: Third-party or reference datasets.
 
-#### `/notebooks`
-Jupyter notebooks for exploration, analysis, and reporting:
-- Use numbered prefixes: `01_exploration.ipynb`, `02_modeling.ipynb`
-- One clear purpose per notebook
+### `/notebooks`
+**Purpose**: Jupyter notebooks for exploration, analysis, and reporting
+
+- Use numbered prefixes where helpful: `01_exploration.ipynb`, `motivation.ipynb`
+- Keep one clear purpose per notebook
 - Include markdown cells with objectives and findings
 - Clean output before committing
 
-#### `/src`
-Reusable Python modules and utilities:
-- `data.py`: Data loading and preprocessing
-- `utils.py`: General utility functions
-- `models.py`: Model training and evaluation
-- `visualization.py`: Plotting functions
+### `/src`
+**Purpose**: Reusable Python modules and utilities
+
+- `data.py`: Data loading and preprocessing helpers
+- `utils.py`: Shared utility functions
+- `wildlife_nlp.py`: NLP and conservation risk functions
 - Keep functions well-documented with docstrings
 
-#### `/models`
-Trained model artifacts and serialized objects:
-- Save models with timestamps: `model_v1_20240101.pkl`
-- Include metadata files with model parameters and performance metrics
+### `/results`
+**Purpose**: Output and analysis results
 
-#### `/results`
-Output and analysis results:
 - **`figures/`**: Generated plots, graphs, and visualizations
 - **`reports/`**: Final analysis reports, summaries, and presentations
 
-#### `/tests`
-Unit and integration tests:
-- Mirror the structure of `/src`
+### `/tests`
+**Purpose**: Unit and integration tests
+
+- Mirror the structure of `/src` where practical
 - Name files as `test_*.py`
-- Run with: `pytest`
+- Run with `pytest`
 
-#### `/docs`
-Project documentation:
+### `/docs`
+**Purpose**: Project documentation
+
 - `STRUCTURE.md`: Detailed structure guide
-- `METHODOLOGY.md`: Approach and assumptions
-- `API.md`: Function/module documentation
+- `DASHBOARD_RESTRUCTURE_SUMMARY.md`: Dashboard restructuring notes
 
-#### `/configs`
-Configuration files for reproducibility:
+### `/configs`
+**Purpose**: Configuration files for reproducibility
+
 - `default.yaml`: Default parameters
-- `experiment_*.yaml`: Experiment-specific configs
 - Use YAML format for human readability
 
-#### `/scripts`
-Standalone Python scripts for automation:
-- Data processing workflows
-- Model training pipelines
-- Data preparation scripts
+### `/scripts`
+**Purpose**: Standalone Python scripts for automation
+
+- Data collection workflows
+- Data processing and cleanup scripts
+- Scrapers for Quora, Reddit, and SerpApi workflows
+
+### Root-level app
+**Purpose**: Main dashboard entry point
+
+- `streamlit_exotic_pet_dashboard.py`: Interactive Streamlit dashboard for analysis and exploration
+
+### Root-level files
+**Purpose**: Project metadata and support files
+
+- `README.md`: Project overview and setup instructions
+- `requirements.txt`: Python dependencies
+- `LICENSE`: License text
+- `.gitignore`: Git ignore rules
 
 ## Quick Start
 
